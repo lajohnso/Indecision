@@ -1,0 +1,12 @@
+{
+  "name": "indecision",
+  "version": "1.0.0",
+  "description": "udemy app, indecision",
+  "main": "index.js",
+  "author": "lajohn",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
+}
