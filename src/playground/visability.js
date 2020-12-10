@@ -1,28 +1,58 @@
-const content = {
-  title: "Visability Toggle",
-  subtitle: "hello",
-};
+class Visability extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleVisability = this.toggleVisability.bind(this);
+    this.state = {
+      visability: true,
+    };
+  }
+  toggleVisability() {
+    this.setState((prevState) => {
+      return {
+        visability: !prevState.visability,
+      };
+    });
+  }
 
-const appRoot = document.getElementById("app");
+  render() {
+    return (
+      <div>
+        <h1>Content Title</h1>
+        <button onClick={this.toggleVisability}>
+          {this.state.visability ? <p>hide</p> : <p>show</p>}
+        </button>
+        {this.state.visability && <h2>This is showing</h2>}
+      </div>
+    );
+  }
+}
+ReactDOM.render(<Visability />, document.getElementById("app"));
 
-let visability = false;
+// const content = {
+//   title: "Visability Toggle",
+//   subtitle: "hello",
+// };
 
-const toggleVisability = () => {
-  visability = !visability;
-  appRender();
-  console.log("yes it works");
-};
+// const appRoot = document.getElementById("app");
 
-const appRender = () => {
-  const app = (
-    <div>
-      <h1>{content.title}</h1>
-      <button onClick={toggleVisability}>{visability ? "Hide" : "Show"}</button>
-      {visability && <p>{content.subtitle}</p>}
-    </div>
-  );
+// let visability = false;
 
-  ReactDOM.render(app, appRoot);
-};
+// const toggleVisability = () => {
+//   visability = !visability;
+//   appRender();
+//   console.log("yes it works");
+// };
 
-appRender();
+// const appRender = () => {
+//   const app = (
+//     <div>
+//       <h1>{content.title}</h1>
+//       <button onClick={toggleVisability}>{visability ? "Hide" : "Show"}</button>
+//       {visability && <p>{content.subtitle}</p>}
+//     </div>
+//   );
+
+//   ReactDOM.render(app, appRoot);
+// };
+
+// appRender();
