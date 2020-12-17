@@ -1,14 +1,18 @@
 import React from "react";
 
 const Option = (props) => (
-  <div>
-    <br />
-    <div style={{ display: "inline-block" }}>{props.optionText}</div>
-    <div style={{ display: "inline-block" }}>
-      <button onClick={(e) => props.handleDeleteSingleOption(props.optionText)}>
-        Remove
-      </button>
-    </div>
+  <div className='option'>
+    <p className='option__text'>
+      {props.count + ". "}
+      {props.optionText}
+    </p>
+
+    <button
+      className='button button--link'
+      onClick={(e) => props.handleDeleteSingleOption(props.optionText)}
+    >
+      Remove
+    </button>
   </div>
 );
 
