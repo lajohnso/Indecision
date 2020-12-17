@@ -8,7 +8,7 @@ import OptionModal from "./OptionModal";
 export default class IndecisionApp extends React.Component {
   state = {
     options: [],
-    title: "",
+    title: "Indecision app",
     subtitle: "Put your life un the hands of a computer",
     selectedOption: undefined,
   };
@@ -80,19 +80,23 @@ export default class IndecisionApp extends React.Component {
   render() {
     return (
       <div>
-        <Header subtitle={this.state.subtitle} />
-        <Action
-          hasOption={this.state.options.length > 0}
-          optionsLength={this.state.options.length}
-          handlePick={this.handlePick}
-          selection={this.state.selection}
-        />
-        <Options
-          options={this.state.options}
-          handleDeleteOptions={this.handleDeleteOptions}
-          handleDeleteSingleOption={this.handleDeleteSingleOption}
-        />
-        <AddOption handleAddOption={this.handleAddOption} />
+        <Header subtitle={this.state.subtitle} title={this.state.title} />
+        <div className='container'>
+          <Action
+            hasOption={this.state.options.length > 0}
+            optionsLength={this.state.options.length}
+            handlePick={this.handlePick}
+            selection={this.state.selection}
+          />
+          <div className='widget'>
+            <Options
+              options={this.state.options}
+              handleDeleteOptions={this.handleDeleteOptions}
+              handleDeleteSingleOption={this.handleDeleteSingleOption}
+            />
+            <AddOption handleAddOption={this.handleAddOption} />
+          </div>
+        </div>
         <OptionModal
           selectedOption={this.state.selectedOption}
           handleCloseModal={this.handleCloseModal}
