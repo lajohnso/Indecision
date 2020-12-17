@@ -47,9 +47,9 @@ export default class IndecisionApp extends React.Component {
     //this.setState(() => {
     //  return { selection: this.state.options[randomIndex] };
     //});
-    this.state.options[randomIndex];
+    const task = this.state.options[randomIndex];
     console.log(randomIndex);
-    this.setState(() => ({ selectedOption: "true" }));
+    this.setState(() => ({ selectedOption: task }));
   };
 
   componentDidMount() {

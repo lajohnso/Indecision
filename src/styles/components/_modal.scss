@@ -21,7 +21,7 @@
   color: white;
   outline: none;
   max-width: 30rem;
-  padding: $l-size;
+  padding: 6rem 10rem 3rem 10rem;
 }
 
 .modal__title {
@@ -31,6 +31,7 @@
 .modal__body {
   margin: 0 0 $l-size 0;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 500;
   word-break: break-all;
+  text-align: center;
 }
